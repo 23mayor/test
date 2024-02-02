@@ -1,8 +1,6 @@
-import React from 'react';
 import logo from '../logo.svg';
 import '../App.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import Table from './Table';
+import { Link } from 'react-router-dom';
 
 function Welcome() {
     return (
@@ -18,9 +16,6 @@ function Welcome() {
           >
             Go to this page!
           </Link>
-          <Routes>
-            <Route path='/Table' Component={Table}></Route>
-          </Routes>
         </header>
       </div>
     );
