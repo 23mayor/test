@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import '../App.css';
 
 export default function Table () {
   
@@ -37,16 +38,17 @@ console.log(people);
 
   return (
 
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Height</th>
-          <th>Weight</th>
-        </tr>
-      </thead>
-      <tbody>
-        {people && 
+    <div className="tableContainer">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          {people && 
             people.map((arr) => {
             return (
             <tr>
@@ -55,8 +57,9 @@ console.log(people);
                 <td>{arr.mass}</td>
             </tr>
             )
-        })}
-      </tbody>
-    </table>
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };

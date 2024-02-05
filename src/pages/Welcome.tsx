@@ -1,20 +1,19 @@
-import logo from '../logo.svg';
+import logo from '../logo.png';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
 function Welcome() {
     return (
-        <div className="App">
+      <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello world!
-          </p>
+          <p>All people from the all SEVEN Star Wars films </p>
+          <p>Now with The Force Awakens data!</p>
           <Link
             className="App-link"
             to='/Table'
           >
-            Go to this page!
+            Click to go to the table!
           </Link>
         </header>
       </div>
