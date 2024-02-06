@@ -3,10 +3,7 @@ import '../App.css';
 
 export default function Table () {
   
-  const [ people, setPeople ] = useState();
-//   const [ name, setName ] = useState('');
-//   const [ height, setHeight ] = useState('');
-//   const [ weight, setMass ] = useState('');
+  const [ people, setPeople ] = useState<any[]>();
 
   useEffect (() => {
     async function getPeople() {
@@ -25,14 +22,6 @@ export default function Table () {
       getPeople();
 
   }, [])
-
-//   fetch('https://swapi.dev/api/people')
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log(data);
-//   })
 
 console.log(people);
 
