@@ -4,6 +4,7 @@ import '../App.css';
 export default function Table () {
   
   const [ people, setPeople ] = useState<any[]>();
+  const [ sortedField, setSortedField ] = useState();
 
   useEffect (() => {
     async function getPeople() {
@@ -23,17 +24,19 @@ export default function Table () {
 
   }, [])
 
-  // let sortedPeople = people;
+  let sortedPeople = people;
 
-  // function compare(a, b) {
-  //   if (a.name < b.name) {
-  //     return -1;
-  //   }
-  //   if (a.name > b.name) {
-  //     return -1;
-  //   }
-  //   return 0;
-  // }
+  if (sortedField && sortedField) {
+    sortedPeople && sortedPeople.sort(function (a, b) {
+      if (a[sortedField] > b[sortedField]) {
+        return 1;
+      }
+      if (a[sortedField] < b[sortedField]) {
+        return -1;
+      }
+      return 0;
+    });
+  }
 
   return (
 
@@ -41,9 +44,21 @@ export default function Table () {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Height</th>
-            <th>Weight</th>
+            <th>
+              <button type="button" onClick={() => setSortedField('name')}>
+                Name
+              </button>
+            </th>
+            <th>
+              <button type="button" onClick={() => setSortedField('height')}>
+                Height
+              </button>
+            </th>
+            <th>
+              <button type="button" onClick={() => setSortedField('mass')}>
+                Weight
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
